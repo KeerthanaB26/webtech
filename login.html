@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Optional: Add a background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            position: relative;
+        }
+
+        /* Logo styling */
+        .navbar .logo img {
+            height: 50px;
+        }
+
+        /* Navbar links - Positioned to the left */
+        .navbar .navbar-links {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            right: 10px;
+        }
+
+        .navbar .navbar-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        /* Welcome Text - Positioned at the center */
+        .navbar .welcome-text {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Center the text horizontally */
+        }
+
+        /* Login form container */
+        .login-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="kssem logo.jpeg" alt="Logo"> <!-- Adjust your logo path -->
+        </div>
+        <!-- Navbar links aligned to the left -->
+        <div class="navbar-links">
+            <a href="index.html">Home</a> <!-- Update if you have a home page -->
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a> <!-- You may need to create a register page -->
+            <a href="logout.html">Logout</a> <!-- You may need to create a logout functionality -->
+        </div>
+        <!-- Welcome text centered -->
+        <div class="welcome-text">
+            Welcome to KSSEM
+        </div>
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="login-container">
+        <form action="login.php" method="POST"> <!-- Action will submit the form data to login.php -->
+            <h2>Login</h2>
+            <!-- Username Field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Password Field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Login Button -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

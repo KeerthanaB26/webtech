@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="style.css"> <!-- Your CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Optional: Add a background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+            position: relative;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+        }
+
+        .navbar .navbar-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .navbar-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navbar .welcome-text {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Center the text horizontally */
+        }
+
+        .register-container {
+            width: 300px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .register-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .register-container button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+    .register-container {
+        width: 80%;  /* Adjust the form width for smaller screens */
+        margin: 50px auto;  /* Adjust the margin for better centering */
+    }
+    
+    .navbar .navbar-links {
+        display: none;  /* Hide the navbar links on small screens */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="kssem logo.jpeg" alt="Logo" height="50">
+        </div>
+        <!-- Links aligned to the right -->
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </div>
+        <!-- Welcome Text centered -->
+        <div class="welcome-text">
+            Welcome to KSSEM
+        </div>
+    </div>
+
+    <!-- Register Form Section -->
+    <div class="register-container">
+        <form action="register.php" method="POST">
+            <h2>Register</h2>
+            
+            <!-- Username Field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Password Field -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Confirm Password Field -->
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <!-- Register Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+            
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Welcome</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Set background image for the whole body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background.jpg'); /* Path to your background image */
+            background-size: cover; /* Ensure the image covers the entire screen */
+            background-position: center; /* Center the image */
+            color: white; /* Change text color to white for better readability */
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for the navbar */
+            padding: 10px;
+        }
+
+        /* Links Section */
+        .navbar-links {
+            display: flex;
+            gap: 20px; /* Space between navbar links */
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        /* Centered Welcome Text */
+        .navbar .welcome-text {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* This will center the text */
+        }
+
+        /* Bio Section Styles */
+        .bio-section {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the bio section */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .bio-section h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .bio-section p {
+            font-size: 1.2rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="kssem logo.jpeg" alt="Logo"> <!-- Adjust your logo path -->
+        </div>
+        <div class="navbar-links">
+            <a href="home.html">Home</a>
+            <a href="logout.html">Logout</a>
+        </div>
+        <div class="welcome-text">
+            Welcome to KSSEM
+        </div>
+    </div>
+
+    <!-- Bio Section for the Logged-in User -->
+    <div class="bio-section">
+        <h2>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2> <!-- Displaying the logged-in user's name -->
+        <p>This is your bio page. You can display user-specific information here.</p>
+        <p>Feel free to edit your bio, profile picture, or anything you'd like to customize.</p>
+    </div>
+
+</body>
+</html>
